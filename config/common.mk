@@ -51,17 +51,12 @@ PRODUCT_COPY_FILES += \
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/compcache:system/bin/compcache \
+    vendor/cm/prebuilt/common/xbin/su:system/xbin/su \
     vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
 PRODUCT_COPY_FILES +=  \
     vendor/cm/proprietary/Term.apk:system/app/Term.apk \
     vendor/cm/proprietary/lib/armeabi/libjackpal-androidterm4.so:system/lib/libjackpal-androidterm4.so \
-	vendor/cm/prebuilt/common/apps/Superuser.apk:system/app/Superuser.apk
-
-# Bring in camera effects
-PRODUCT_COPY_FILES +=  \
-    vendor/cm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/cm/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -83,23 +78,14 @@ PRODUCT_PACKAGES += \
     Camera \
     Development \
     LatinIME \
-    SpareParts \
-    su
+    SpareParts
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
-    VideoEditor \
     VoiceDialer \
     SoundRecorder \
     Basic \
-    HoloSpiralWallpaper \
-    MagicSmokeWallpapers \
-    NoiseField \
-    Galaxy4 \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
-    PhaseBeam
+    LiveWallpapersPicker
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
