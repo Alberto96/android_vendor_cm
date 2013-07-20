@@ -10,7 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.rommanager.developerid=cyanogenmodnightly
 else
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
+    ro.rommanager.developerid=Alberto96
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -93,9 +93,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
-    CMWallpapers \
-    Apollo \
-    CMUpdater
+    Apollo
 
 # Extra tools in CM
 PRODUCT_PACKAGES += \
@@ -108,8 +106,8 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
 PRODUCT_VERSION_MAJOR = 9
-PRODUCT_VERSION_MINOR = 1
-PRODUCT_VERSION_MAINTENANCE = 0
+PRODUCT_VERSION_MINOR = 2
+PRODUCT_VERSION_MAINTENANCE = RC1
 
 # Set CM_BUILDTYPE
 ifdef CM_NIGHTLY
@@ -131,7 +129,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # If CM_BUILDTYPE is not defined, set to UNOFFICIAL
-    CM_BUILDTYPE := UNOFFICIAL
+    CM_BUILDTYPE := UNOFFICIAL_Alberto96
     CM_EXTRAVERSION :=
 endif
 
