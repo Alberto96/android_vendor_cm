@@ -10,6 +10,9 @@ Follow http://twitter.com/cmsrc for commit-by-commit updates.
 CHANGELOG (notable new features)
 ---------
 
+### 9.1.0 RC MSM7225
+* First Release
+
 ### 9.1.0
 * Common: Things and Stuff (I swear we will fill this out much better later on)
 

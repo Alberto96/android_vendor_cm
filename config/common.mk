@@ -5,17 +5,16 @@ ifneq ($(TARGET_BOOTANIMATION_NAME),)
         vendor/cm/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 
-ifdef CM_NIGHTLY
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmodnightly
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=Alberto96
-endif
+    ro.goo.developerid=Alberto96
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+DATE := $(shell date -u +%Y%m%d)
+
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.goo.rom=CM9Stable \
+    ro.goo.version=$(DATE) \
     keyguard.no_require_sim=true \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
@@ -38,6 +37,8 @@ PRODUCT_COPY_FILES += \
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/cm/prebuilt/common/xbin/su:system/xbin/su \
+    vendor/cm/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
     vendor/cm/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # userinit support
@@ -51,7 +52,6 @@ PRODUCT_COPY_FILES += \
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/bin/compcache:system/bin/compcache \
-    vendor/cm/prebuilt/common/xbin/su:system/xbin/su \
     vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
 
 PRODUCT_COPY_FILES +=  \
@@ -105,9 +105,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
-PRODUCT_VERSION_MAJOR = 9
-PRODUCT_VERSION_MINOR = 2
-PRODUCT_VERSION_MAINTENANCE = RC1
+PRODUCT_VERSION_MAJOR = 9.1_RC
+PRODUCT_VERSION_MINOR =
+PRODUCT_VERSION_MAINTENANCE =
 
 # Set CM_BUILDTYPE
 ifdef CM_NIGHTLY
